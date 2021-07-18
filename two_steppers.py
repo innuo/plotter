@@ -14,7 +14,7 @@ CHAN_RIGHT = [19,26,16,20]
 def spin(chan_list, turns):
 
     arr = CONTROL_SEQ if turns >= 0.0 else REV_CONTROL_SEQ        
-    steps = int(abs(turns) * TURN_STEPS)
+    steps = int(abs(turns) * TURN_STEPS) + 1
     spin_delay = (TURN_SECS / steps) - CONTROL_DELAY * len(arr)
     
     for i in range(steps):
